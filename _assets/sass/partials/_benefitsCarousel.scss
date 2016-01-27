@@ -1,0 +1,188 @@
+.benefits-carousel {
+
+    margin-bottom: 120px;
+
+    p {
+        color: $color-white;
+    }
+
+    nav {
+        padding: 35px 0;
+        background-color: $color-med-dark-background;
+        text-align: center;
+
+        @include breakpoint($SIZE_TABLET){
+            padding-bottom: 15px;
+        }
+
+        @include breakpoint($SIZE_MOBILE){
+            display: none;
+        }
+
+        button {
+            width: 190px;
+            padding-top: 55px;
+            background-color: transparent;
+            background-position: 50% 0;
+            border: 0;
+            cursor: pointer;
+            text-align: center;
+            color: $color-black;
+            outline: none;
+
+            @include breakpoint($SIZE_CAROUSEL-NAV-PRE-TABLET-1){
+                width: 145px;
+                font-size: rem(13px);
+            }
+
+            @include breakpoint($SIZE_CAROUSEL-NAV-PRE-TABLET-2){
+                width: 125px;
+                font-size: rem(12px);
+            }
+
+            @include breakpoint($SIZE_TABLET){
+                width: 165px;
+                margin-bottom: 20px;
+                font-size: rem(14px);
+            }
+
+            &.is-selected {
+                color: $color-orange;
+            }
+
+            &:active {
+                //fixes flickity jump issue.
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    }
+
+    /* flickity overrids */
+    .flickity-prev-next-button {
+        width: 100px;
+        height: 100px;
+        background: transparent;
+
+        @include breakpoint($SIZE_TABLET) {
+            &.previous {
+                left: -5px;
+            }
+            &.next {
+                right: -5px;
+            }
+        }
+    }
+    .flickity-prev-next-button:hover {
+        background: transparent;
+    }
+    .flickity-prev-next-button .arrow {
+        fill: $color-black;
+    }
+    .flickity-prev-next-button.no-svg {
+        color:  $color-black;
+    }
+    .flickity-prev-next-button:disabled {
+        opacity: 0.25;
+    }
+
+    &__arrow {
+        margin-left: 80px;
+        position: absolute;
+        bottom: -35px;
+        left: 29px;
+        transition: left 0.5s;
+        @include arrow(14px, $color-dark-background, "up");
+
+        @include breakpoint($SIZE_CAROUSEL-SLIDE-PRE-TABLET) {
+            left: 86px;
+            margin-left: 57px;
+        }
+
+        @include breakpoint($SIZE_TABLET) {
+            display: none;
+        }
+
+        span {
+            display: none;
+        }
+    }
+
+    &__slides-cnt {
+        padding: 70px 0;
+        background-color: $color-dark-background;
+
+        @include breakpoint($SIZE_CAROUSEL-SLIDE-PRE-TABLET) {
+            padding: 70px 0 30px;
+        }
+
+        & > div {
+            //js-flickity-plugin
+            &:after {
+                content: 'flickity';
+                display: none;
+            }
+            @include breakpoint($SIZE_MOBILE) {
+                &:after {
+                    content: '';
+                }
+            }
+        }
+    }
+
+    &__slide {
+        width: 100%;
+
+        @include breakpoint($SIZE_MOBILE) {
+            @extend %clearfix;
+        }
+
+        .text {
+            width: 40%;
+            margin-right: 10%;
+            float: left;
+
+            @include breakpoint($SIZE_CAROUSEL-SLIDE-PRE-TABLET) {
+                width: 35%;
+                margin: 0 5% 0 10%;
+            }
+
+            @include breakpoint($SIZE_TABLET) {
+                width: 100%;
+                margin: 0 0 30px;
+                float: none;
+            }
+
+            h1 {
+                font-size: rem(30px);
+                line-height: rem(37.5px);
+                color: $color-orange;
+            }
+
+            p {
+                font-size: rem(16px);
+                line-height: rem(26x);
+            }
+        }
+
+        .image {
+            width: 50%;
+            padding-top: 28%;
+            float: left;
+            background-size: contain;
+
+            @include breakpoint($SIZE_CAROUSEL-SLIDE-PRE-TABLET) {
+                width: 40%;
+                margin-right: 10%;
+            }
+
+            @include breakpoint($SIZE_TABLET) {
+                width: 75%;
+                margin: 0 auto;
+                padding-top: 50%;
+                float: none;
+            }
+        }
+    }
+}
+

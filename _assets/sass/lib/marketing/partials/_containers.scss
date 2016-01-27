@@ -1,0 +1,106 @@
+.page-wrap {
+    margin: 0 auto;
+    max-width: 1024px;
+    position: relative;
+    z-index: 1;
+
+    @include breakpoint($SIZE_DESKTOP_SMALL){
+        padding: 0 30px;
+    }
+
+    @include breakpoint($SIZE_MOBILE){
+        padding: 0 10px;
+    }
+}
+
+.landing-two-col {
+    padding: 50px 0 45px;
+    border-bottom: 1px solid $color-grey-3;
+    overflow: hidden;
+
+    @extend %clearfix;
+
+    main {
+        width: 65%;
+        padding-right: 55px;
+        float: left;
+
+        @include breakpoint($SIZE_TABLET){
+            padding-right: 30px;
+        }
+
+        @include breakpoint($SIZE_MOBILE){
+            width: auto;
+            margin-bottom: 90px;
+            padding: 0;
+            float: none;
+        }
+
+        .graphic {
+            max-width: 550px;
+            margin: 45px auto;
+            padding-top: 42%;
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+        }
+    }
+
+    aside {
+        width: 35%;
+        padding-left: 40px;
+        float: left;
+        position: relative;
+        z-index: 0;
+
+        @include breakpoint($SIZE_MOBILE){
+            width: auto;
+            padding: 0;
+            float: none;
+        }
+
+        h2 {
+            color: $color-grey-dark;
+        }
+
+        h4 {
+            font-weight: 400;
+            color: $color-grey-dark;
+        }
+
+        .fields-list {
+            margin-bottom: 180px;
+
+            @include breakpoint($SIZE_TABLET){
+                margin-bottom: 90px;
+            }
+        }
+
+        .btn, .btn.large.clear--dark {
+            width: 100%;
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        .success {
+            h2 {
+                color: $color-green;
+            }
+        }
+
+        &:after {
+            position: absolute;
+            top: -50px;
+            bottom: -100vh;
+            left: 0;
+            right: -50vw;
+            z-index: -1;
+            background-color: $color-grey;
+            content: "";
+
+            @include breakpoint($SIZE_MOBILE){
+                top: -30px;
+                left: -50vw;
+            }
+        }
+    }
+}

@@ -1,0 +1,42 @@
+.text-list {
+
+    h1 {
+        font-size: rem(30px);
+        color: $color-orange;
+    }
+
+    .row {
+        @extend %clearfix;
+
+        & > div {
+            width: 50%;
+            margin-bottom: 50px;
+            padding: 0 25px 0 0;
+            float: left;
+
+            @include breakpoint($SIZE_MOBILE) {
+                width: 100%;
+                margin-bottom: 30px;
+                padding: 0;
+                float: none;
+            }
+
+            &:nth-child(2) {
+                padding: 0 0 0 25px;
+                @include breakpoint($SIZE_MOBILE) {
+                    padding: 0;
+                }
+            }
+        }
+    }
+
+    &--one-col {
+        .page-wrap > div {
+            margin-bottom: 50px;
+
+            @include breakpoint($SIZE_MOBILE) {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}

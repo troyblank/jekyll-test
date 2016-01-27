@@ -1,0 +1,6 @@
+images:
+    files:
+        -   expand: true
+            cwd: _assets/images
+            src: "**/*.{png,jpg}"
+            dest: public/images

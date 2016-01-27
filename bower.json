@@ -1,0 +1,9 @@
+{
+  "name": "dwolla-marketing",
+  "version": "0.0.0",
+  "description": "Dwolla marketing pages",
+  "devDependencies": {
+    "jquery": "1.11.3",
+    "flickity": "1.1.0"
+  }
+}

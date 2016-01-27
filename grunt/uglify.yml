@@ -1,0 +1,11 @@
+options:
+    sourceMap: true
+
+marketing:
+    files:
+        public/js/marketing.js:
+            - bower_components/jquery/dist/jquery.js
+            - bower_components/flickity/dist/flickity.pkgd.js
+            - _assets/js/dwolla.js
+            - _assets/js/dwolla/util/*.js
+            - _assets/js/dwolla/about/*.js

@@ -1,0 +1,145 @@
+$slide-time: 0.5s;
+
+body > header {
+    margin-bottom: 16px;
+    padding: 25px 0 0;
+    position: relative;
+    z-index: 5;
+    @extend %inverse;
+    @extend %clearfix;
+
+    &.light {
+        border-bottom: 1px solid $color-grey-3;
+        padding-bottom: 40px;
+    }
+
+    .notification {
+        margin: -25px 0 25px;
+        padding: 10px 0;
+        background: $color-black-dark;
+        text-align: center;
+
+        a {
+            color: $color-blue;
+            text-decoration: none;
+
+            span {
+                margin-right: 10px;
+                padding: 4px 10px;
+                background: $color-black;
+                border-radius: 3px;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    .page-wrap {
+        @extend %clearfix;
+
+        & > div {
+            float: left;
+            @extend %clearfix;
+
+            @include breakpoint($SIZE_TABLET_SMALL){
+                float: none;
+            }
+
+            .logo {
+                width: 135px;
+                height: 26px;
+                margin-top: 6px;
+                display: inline-block;
+                text-indent: 100%;
+                overflow: hidden;
+                white-space: nowrap;
+                float: left;
+                opacity: 1;
+            }
+
+            .hamburger {
+                display: none;
+                float: right;
+
+                a {
+                    margin-right: 15px;
+
+                    &:last-child {
+                        margin: 0;
+                    }
+
+                    @include breakpoint($SIZE_MOBILE_SMALL) {
+                        margin-right: 10px;
+                    }
+
+                    &:not(.btn) {
+                        line-height: rem(40px);
+                    }
+                }
+
+                @include breakpoint($SIZE_TABLET_SMALL) {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+
+    .alerts--banner {
+        margin:-26px 0 0;
+    }
+
+    nav a {
+       margin-right: 30px; 
+    }
+
+    a {
+        text-decoration: none;
+        opacity: 0.5;
+        font-weight: 600;
+
+        &:hover {
+            opacity: 0.85; 
+        }
+
+        &:last-child {
+            margin: 0;
+        }
+
+        &.btn {
+            opacity: 1;
+        }
+    }
+
+    .header__primary {
+        padding-bottom: 20px;
+
+        nav {
+            float: right;
+            transition: height $slide-time, margin $slide-time;
+
+            @include breakpoint($SIZE_TABLET_SMALL) {
+                width: 100%;
+                //margin-top: 30px;
+                height: 0;
+                padding: 0;
+                float: none;
+                overflow: hidden;
+                background: rgba(0, 0, 0, 0.25);
+            }
+
+            a {
+                @include breakpoint($SIZE_TABLET_SMALL) {
+                    margin: 0;
+                    padding: 15px 0;
+                    display: block;
+                    text-align: center;
+                }
+
+                &.btn {
+                    @include breakpoint($SIZE_TABLET_SMALL) {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

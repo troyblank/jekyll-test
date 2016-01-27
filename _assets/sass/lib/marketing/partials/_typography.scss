@@ -1,0 +1,168 @@
+//Add this to head: <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300|Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+// 300 = light, 400 = normal, 600 = semi-bold, 700 = bold
+
+$BASE-FONT-SIZE: 14px;
+
+@function rem($size) {
+  $remSize: $size / $BASE-FONT-SIZE;
+  @return #{$remSize}rem;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    color: $color-black;
+    line-height: rem(21px);
+    -webkit-font-smoothing: antialiased;
+    
+    %inverse & {
+        color: $color-white;
+    }
+}
+
+%inverse {
+    //for all on dark backgrounds.
+    color: $color-white;
+}
+
+%roboto-slab {
+    font-family: "Roboto Slab", serif;
+}
+
+html {
+    font-size: $BASE-FONT-SIZE;
+}
+
+input, select, textarea, button{
+    font-family:inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 10px 0;
+
+    %inverse & {
+        color: $color-white;
+    }
+}
+
+h1 {
+    font-size: rem(40px);
+    line-height: rem(54px);
+    font-weight: 300;
+    color: $color-orange;
+    @extend %roboto-slab;
+
+    @include breakpoint($SIZE_TABLET){
+        font-size: rem(32px);
+        line-height: rem(42px);
+    }
+}
+
+h2 {
+    margin-bottom: 35px;
+    font-size: rem(32px);
+    line-height: rem(40px);
+    font-weight: 300;
+    color: $color-orange;
+    @extend %roboto-slab;
+
+    @include breakpoint($SIZE_MOBILE){
+        margin-bottom: 15px;
+    }
+}
+
+h3 {
+    font-size: rem(26px);
+    line-height: rem(34px);
+    font-weight: 600;
+    letter-spacing: rem(-0.7px);
+}
+
+h4 {
+    font-size: rem(20px);
+    line-height: rem(26px);
+    font-weight: 600;
+}
+
+h5 {
+    font-size: rem(16px);
+    line-height: rem(22px);
+    font-weight: 600;
+}
+
+h6 {
+    font-size: rem(11px);
+    line-height: rem(18px);
+    font-weight: 600;
+    letter-spacing: rem(0.4px);
+    text-transform: uppercase;
+    color: $color-grey-dark;
+}
+
+p {
+    margin: 0 0 15px 0;
+    padding: 0;
+    font-size: rem(16px);
+    line-height: rem(25px);
+
+    &:empty {
+        //for wysiwyg editors.
+        display: none;
+    }
+}
+
+a {
+    color: $color-blue;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    %inverse & {
+        color: $color-white;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+strong {
+    font-weight: 700;
+}
+
+em {
+    font-style: italic;
+}
+
+hr {
+    height: 1px;
+    margin-bottom: 20px;
+    background-color: $color-grey-med;
+    border: 0;
+}
+
+ul {
+
+    li {
+        font-size: rem(16px);
+    }
+    
+    &.bullet {
+        li {
+            margin: 0 0 12px 15px;
+            position: relative;
+            &:before {
+                position: absolute;
+                width: 4px;
+                height: 4px;
+                top: 9px;
+                left: -12px;
+                border-radius: 50%;
+                background-color: $color-black;
+                content: "";
+            }
+        }
+    }
+}

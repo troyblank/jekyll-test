@@ -1,0 +1,41 @@
+.alerts {
+    padding: 0;
+    list-style: none;
+
+    li {
+        position: relative;
+        padding: 7px 7px 7px 32px;  
+        border-top: 1px solid #fff;
+        color: $color-black;
+        font-size: rem(13px);
+        line-height: rem(21px);
+        text-decoration: none;
+        background-position: 8px 9.5px;
+
+        a {
+            color: $color-black;
+            text-decoration: underline;
+        }
+
+        &:last-child {
+            margin: 0 0 20px 0;
+        }
+
+        &.alert {
+            background-color: $color-alert-yellow;
+        }
+    }
+
+    &.alerts--banner {
+        text-align: center;
+
+        li {
+            border-radius: none;
+        }
+
+        span {
+            padding: 7px 7px 7px 25px;
+            background-position: 0 50%;
+        }
+    }
+}

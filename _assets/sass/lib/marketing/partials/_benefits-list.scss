@@ -1,0 +1,208 @@
+.benefits-list {
+    background: $color-white;
+    text-align: center;
+
+    header {
+
+        margin-bottom: 70px;
+
+        p {
+            font-size: rem(24px);
+            line-height: rem(27px);
+
+            @include breakpoint($SIZE_MOBILE){
+                font-size: rem(18px);
+            }
+        }
+    }
+
+    ul {
+        @extend %clearfix;
+        li {
+            height: 230px;
+            max-height: 230px;
+            width: 24%;
+            margin: 0 4% 33px 0;
+            padding: 65px 0 0;
+            float: left;
+            overflow: hidden;
+            background-position: 50% 0;
+
+            &:nth-child(3n -2){
+                margin: 0 4% 33px 10%;
+            }
+
+            @include breakpoint($SIZE_TABLET){
+                width: 44%;
+
+                &:nth-child(3n -2){
+                    margin: 0 4% 33px 0;
+                }
+
+                &:nth-child(2n -1){
+                    margin: 0 4% 33px 4%;
+                }
+            }
+
+            @include breakpoint($SIZE_MOBILE){
+                width: 100%;
+                margin: 0 0 10px;
+
+                &:nth-child(3n -2){
+                    margin: 0 0 10px;
+                }
+
+                &:nth-child(2n -1){
+                   margin: 0 0 10px;
+                }
+            }       
+
+            h3 {
+                margin-bottom: 5px;
+                font-size: rem(20px);
+                line-height: rem(26px);
+                color: $color-orange;
+            }
+
+            p {
+               font-size: rem(16px);
+                line-height: rem(26px); 
+            }
+
+            em {
+                margin-bottom: 5px;
+                display: inline-block;
+                font-size: rem(18px);
+                line-height: rem(26px);
+                color: $color-grey-med-3;
+            }
+        }
+    }
+}
+
+.benefits-list-big {
+    margin-bottom: 145px;
+    text-align: center;
+
+    @include breakpoint($SIZE_MOBILE){
+        margin-bottom: 100px;
+    }
+
+    ul {
+        @include flexbox();
+        @include flex-wrap(wrap);
+        @include justify-content(center);
+        @extend %clearfix;
+        li {
+            width: 23%;
+            margin: 0 7% 0 0;
+            padding-top: 126px;
+            background-position: 50% 0;
+
+            &:last-child {
+                margin: 0;
+            }
+
+            @include breakpoint($SIZE_TABLET){
+                width: 30%;
+                margin: 0 5% 0 0;
+            }
+
+            @include breakpoint($SIZE_MOBILE){
+                width: 100%;
+                margin: 0 0 40px 0;
+            }
+
+            h3 {
+                margin-bottom: 20px;
+                font-size: rem(20px);
+                line-height: rem(26px);
+                color: $color-orange;
+
+                @include breakpoint($SIZE_MOBILE){
+                    margin-bottom: 10px;
+                }
+            }
+
+            p {
+                margin: 0;
+                font-size: rem(16px);
+                line-height: rem(26px); 
+            }
+        }
+    }
+}
+
+.benefits-list-giant {
+    margin-bottom: 30px;
+
+    @include breakpoint($SIZE_MOBILE){
+        margin-bottom: 75px;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    ul {
+        li {
+            margin-bottom: 90px;
+            position: relative;
+
+            @extend %clearfix;
+
+
+            @include breakpoint($SIZE_MOBILE){
+                margin-bottom: 45px;
+            }
+
+            .content {
+                width: 44%;
+                padding: 20px 5% 0 0;
+                float: left;
+
+                h1 {
+                    margin-bottom: 10px;
+                    font-size: rem(26px);
+                    text-align: left;
+                }
+
+                @include breakpoint($SIZE_MOBILE){
+                    width: 100%;
+                    padding: 0;
+                    float: none;
+                }
+            }
+
+            .image {
+                width: 56%;
+                padding-top: 23%;
+                float: right;
+                background-size: cover;
+
+                @include breakpoint($SIZE_MOBILE){
+                    width: 100%;
+                    padding-top: 41%;
+                    margin-bottom: 30px;
+                    float: none;
+                }
+            }
+
+            &:nth-child(even){
+                .content {
+                    width: 44%;
+                    float: right;
+
+                    @include breakpoint($SIZE_MOBILE){
+                        width: 100%;
+                        float: none;
+                    }
+                }
+
+                .image {
+                    float: left;
+                }
+            }
+        }
+    }
+}

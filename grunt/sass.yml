@@ -1,0 +1,11 @@
+options:
+    outputStyle: compressed
+    sourceMap: true
+
+public:
+    expand: true
+    cwd: _assets/sass
+    src: '*.scss'
+    dest: public/css
+    ext: '.css'
+    extDot: last

@@ -1,0 +1,6 @@
+@function image-url($image){
+    @if variable-exists(imagePath) {
+        @return url("#{$imagePath}#{$image}");
+    }
+    @return url("#{$image}");
+}

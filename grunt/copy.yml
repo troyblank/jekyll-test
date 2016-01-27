@@ -1,0 +1,5 @@
+icons:
+    expand: true
+    cwd: _assets/icons
+    src: '**/*.css'
+    dest: public/icons

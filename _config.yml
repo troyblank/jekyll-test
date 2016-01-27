@@ -1,0 +1,10 @@
+# Site settings
+title: Dwolla
+description: "Providing ACH payment services, instant bank verification, and a simple ACH transfer API. We make ACH processing easy for businesses and individuals."
+baseurl: ""
+
+# Build settings
+include: ["_pages"]
+exclude: ["bower_components", "grunt", "node_modules", "bower.json", "Gruntfile.js", "package.json"]
+permalink: /:title/
+markdown: kramdown
